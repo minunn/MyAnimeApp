@@ -1,4 +1,4 @@
-# flutterevaluation
+# MyAnimeApp
 
 A new Flutter project.
 
