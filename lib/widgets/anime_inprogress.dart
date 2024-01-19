@@ -17,21 +17,23 @@ class _AnimeListState extends State<AnimeInProgress> {
       appBar: AppBar(
         title: Text('Prochains animés'),
       ),
-body: StreamBuilder<List<Anime>>(
-  stream: _animeBloc.animeList, // Liste des animes
-  builder: (context, snapshot) {
-    if (!snapshot.hasData) {
-      // Si les données ne sont pas encore disponibles, j'affiche un indicateur de chargement
-      return const Center(child: CircularProgressIndicator());
-    }
-    final animeList = snapshot.data!;
-    // Filtre la liste d'anime pour avoir ceux dont le prochain épisode est dans moins de 14 jours
-    final upcomingAnimeList =
-        animeList.where((anime) => anime.nextEpisodeCountdown.inDays <= 14).toList();
-    return ListView.builder(
-      itemCount: upcomingAnimeList.length, // nombres d'animes dans la liste
-      itemBuilder: (context, index) {
-        final anime = upcomingAnimeList[index]; // anime courant
+      body: StreamBuilder<List<Anime>>(
+        stream: _animeBloc.animeList, // Liste des animes
+        builder: (context, snapshot) {
+          if (!snapshot.hasData) {
+            // Si les données ne sont pas encore disponibles, j'affiche un indicateur de chargement
+            return const Center(child: CircularProgressIndicator());
+          }
+          final animeList = snapshot.data!;
+          // Filtre la liste d'anime pour avoir ceux dont le prochain épisode est dans moins de 14 jours
+          final upcomingAnimeList = animeList
+              .where((anime) => anime.nextEpisodeCountdown.inDays <= 14)
+              .toList();
+          return ListView.builder(
+            itemCount:
+                upcomingAnimeList.length, // nombres d'animes dans la liste
+            itemBuilder: (context, index) {
+              final anime = upcomingAnimeList[index]; // anime courant
               return Dismissible(
                 key: Key(anime.title), // key pour le dismissible
                 onDismissed: (direction) {

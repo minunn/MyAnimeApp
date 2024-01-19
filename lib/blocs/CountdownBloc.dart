@@ -16,7 +16,8 @@ class CountdownBloc {
 
   void _startTimer() {
     _timer = Timer.periodic(Duration(seconds: 1), (timer) {
-      final duration = _nextEpisodeDate.difference(DateTime.now()); //calcul prochain episode 
+      final duration =
+          _nextEpisodeDate.difference(DateTime.now()); //calcul prochain episode
       final days = duration.inDays;
       final hours = duration.inHours.remainder(24);
       final minutes = duration.inMinutes.remainder(60);

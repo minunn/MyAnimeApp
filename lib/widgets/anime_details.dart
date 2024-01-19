@@ -15,7 +15,7 @@ class AnimeDetails extends StatefulWidget {
 
 class _AnimeDetailsState extends State<AnimeDetails>
     with SingleTickerProviderStateMixin {
-      // Blocs
+  // Blocs
   late CountdownBloc _countdownBloc;
   late WorldClockBloc _worldClockBloc;
   late AnimationController _controller;
@@ -102,7 +102,8 @@ class _AnimeDetailsState extends State<AnimeDetails>
                       ),
                       SizedBox(height: 16.0),
                       Text(
-                        widget.anime.description, //affiche la description de l'anime
+                        widget.anime
+                            .description, //affiche la description de l'anime
                         style: TextStyle(
                           fontSize: 16.0,
                           color: const Color.fromARGB(255, 0, 0, 0),
@@ -120,7 +121,8 @@ class _AnimeDetailsState extends State<AnimeDetails>
                         textAlign: TextAlign.center,
                       ),
                       StreamBuilder<String>(
-                        stream: _countdownBloc.countdownStream, //compte à rebours avec les jours, heures, minutes et secondes
+                        stream: _countdownBloc
+                            .countdownStream, //compte à rebours avec les jours, heures, minutes et secondes
                         builder: (context, snapshot) {
                           return Text(
                             snapshot.data ?? '',
@@ -158,17 +160,16 @@ class _AnimeDetailsState extends State<AnimeDetails>
                       ElevatedButton(
                         onPressed: () async {
                           //j'utilise le package url_launcher pour ouvrir le lien
-                            launchUrl(Uri.parse(widget.anime.crunchyrollUrl));
+                          launchUrl(Uri.parse(widget.anime.crunchyrollUrl));
                         },
                         child: Text('Regarder sur Crunchyroll'),
                       ),
                       SizedBox(height: 16.0),
                       ElevatedButton(
                           onPressed: () async {
-                             launchUrl(Uri.parse(widget.anime.trailerUrl));
+                            launchUrl(Uri.parse(widget.anime.trailerUrl));
                           },
-                          child: Text('Regarder le trailer de l\'anime')
-                        )
+                          child: Text('Regarder le trailer de l\'anime'))
                     ],
                   ),
                 ),

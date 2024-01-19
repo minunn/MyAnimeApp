@@ -42,7 +42,7 @@ class AnimeBloc {
 //FutureBuilder pour ajouter un anime et sauvegarder les sharedPreferences
   Future<void> addAnime(Anime anime) async {
     final animeList = _animeListSubject.value;
-    // Ajout de l'anime à la liste et ajout de la nouvelle liste à la liste des animes 
+    // Ajout de l'anime à la liste et ajout de la nouvelle liste à la liste des animes
     //et pour finir sauvegarde de la liste des animes avec les sharedPreferences
     animeList.add(anime);
     _animeListSubject.add(animeList);
@@ -116,7 +116,7 @@ class AnimeBloc {
 
 //FutureBuilder pour fermer les streams des animes pour éviter les fuites de mémoire
   Future<void> dispose() async {
-  //je ferme les streams des anime pour éviter les fuites de mémoire :)
+    //je ferme les streams des anime pour éviter les fuites de mémoire :)
     _animeListSubject.close();
   }
 }
