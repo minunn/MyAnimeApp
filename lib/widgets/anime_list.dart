@@ -75,7 +75,11 @@ class _AnimeListState extends State<AnimeList> {
                   ),
                   trailing: IconButton(
                     icon: Icon(Icons.favorite,
-                            color: anime.isFavorite ? Colors.red : Theme.of(context).brightness == Brightness.dark ? Colors.white : Colors.black),
+                        color: anime.isFavorite
+                            ? Colors.red
+                            : Theme.of(context).brightness == Brightness.dark
+                                ? Colors.white
+                                : Colors.black),
                     onPressed: () {
                       print('Bouton favori cliqué !');
                       if (anime.isFavorite) {
@@ -193,11 +197,11 @@ class _AnimeListState extends State<AnimeList> {
                 decoration: InputDecoration(
                     labelText: 'Lien Crunchyroll de l\'anime (URL)'),
               ),
-              // TextField(
-              //   onChanged: (value) => trailerEmbedUrl = value,
-              //   decoration: InputDecoration(
-              //       labelText: 'Lien de la bande-annonce de l\'anime (URL)'),
-              // ),
+              TextField(
+                onChanged: (value) => trailerUrl = value,
+                decoration: InputDecoration(
+                    labelText: 'Lien de la bande-annonce de l\'anime (URL)'),
+              ),
             ],
           ),
           actions: [
