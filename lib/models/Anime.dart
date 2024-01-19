@@ -23,7 +23,7 @@ class Anime {
   Duration get nextEpisodeCountdown =>
       nextEpisodeDate.difference(DateTime.now());
 
-  // Création d'un JSON à partir d'un objet Anime
+  // Création d'un JSON à partir d'un objet Anime (pour le stockage) DTO
   Map<String, dynamic> toJson() => {
         'title': title,
         'description': description,
@@ -33,7 +33,7 @@ class Anime {
         'trailerUrl': trailerUrl,
       };
 
-  // Création d'un objet Anime à partir d'un JSON
+  // Création d'un objet Anime à partir d'un JSON (pour le stockage) DTO
   factory Anime.fromJson(Map<String, dynamic> json) => Anime(
         title: json['title'] ?? '',
         description: json['description'] ?? '',
