@@ -17,8 +17,16 @@ class _MyAnimeAppState extends State<MyAnimeApp> {
     return MaterialApp(
       title: 'Mes animés app !',
       theme: isNightMode
-          ? ThemeData.dark()
-          : ThemeData.light(), // Thème de l'application
+          ? ThemeData.dark().copyWith(
+              colorScheme: ColorScheme.dark(
+                primary: Color.fromRGBO(0, 0, 0, 1),
+              ),
+            )
+          : ThemeData.light().copyWith(
+              colorScheme: ColorScheme.light(
+                primary: Color.fromRGBO(48, 48, 48, 1),
+              ),
+            ),
       debugShowCheckedModeBanner: false, // Désactive le bandeau de mode debug
       home: DefaultTabController(
         length: 3,
@@ -47,7 +55,17 @@ class _MyAnimeAppState extends State<MyAnimeApp> {
                 },
                 child: AnimatedTheme(
                   duration: Duration(milliseconds: 200),
-                  data: isNightMode ? ThemeData.dark() : ThemeData.light(),
+                  data: isNightMode
+                      ? ThemeData.dark().copyWith(
+                          colorScheme: ColorScheme.dark(
+                            primary: Color.fromRGBO(0, 0, 0, 1),
+                          ),
+                        )
+                      : ThemeData.light().copyWith(
+                          colorScheme: ColorScheme.light(
+                            primary: Color.fromRGBO(48, 48, 48, 1),
+                          ),
+                        ),
                   child: InkWell(
                     onTap: () {
                       setState(() {
@@ -57,12 +75,15 @@ class _MyAnimeAppState extends State<MyAnimeApp> {
                     child: Padding(
                       padding: const EdgeInsets.all(10.0),
                       child: Icon(
-                        isNightMode ? Icons.brightness_3_rounded: Icons.wb_sunny_rounded,
+                        isNightMode
+                            ? Icons.brightness_3_rounded
+                            : Icons.wb_sunny_rounded,
                         color: isNightMode
-                            ? Colors.deepPurple
+                            ? const Color.fromARGB(255, 58, 71, 183)
                             : (isHovered
-                                ? Colors.blue.withOpacity(0.8)
-                                : Colors.blue),
+                                ? Color.fromARGB(255, 33, 177, 243)
+                                    .withOpacity(0.8)
+                                : Color.fromARGB(255, 33, 159, 243)),
                       ),
                     ),
                   ),
