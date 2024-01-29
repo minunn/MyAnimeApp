@@ -1,14 +1,25 @@
 -How to add redirection url button library flutter
+
 -json translation flutter for default data flutter
+
 -Animation flutter controller and animation types
+
 -manage state flutter bloc pattern 
+
 -Animations animatedWidget 
+
 -Convert json to model and model list to json 
+
 -How to transform create or combine streams
+
 -How to add loading indicators while fetching data 
+
 -Add some comments in my code
+
 -Add some documentation about my code
+
 -How to connect flutter app on api for fetch data 
+
 -
 
 -Error: MissingPluginException(No implementation found for method canLaunch on channel plugins.flutter.io/url_launcher) dart-sdk/lib/internal/js_dev_runtime/private/ddc_runtime/errors.dart 294:3 throw packages/flutter/src/services/platform_channel.dart 320:7 _invokeMethod dart-sdk/lib/_internal/js_dev_runtime/patch/async_patch.dart 45:50 dart-sdk/lib/async/zone.dart 1661:54 runUnary dart-sdk/lib/async/future_impl.dart 162:18 handleValue dart-sdk/lib/async/future_impl.dart 846:44 handleValueCallback dart-sdk/lib/async/future_impl.dart 875:13 _propagateToListeners dart-sdk/lib/async/future_impl.dart 647:5 [_completeWithValue] dart-sdk/lib/async/future_impl.dart 721:7 callback dart-sdk/lib/async/schedule_microtask.dart 40:11 _microtaskLoop dart-sdk/lib/async/schedule_microtask.dart 49:5 _startMicrotaskLoop dart-sdk/lib/_internal/js_dev_runtime/patch/async_patch.dart 181:7
